@@ -1,0 +1,258 @@
+body {
+    background-color: beige;
+}
+
+.list {
+
+    border-top: #96FF33;
+    border-width: 0ch;
+
+}
+
+h4:hover {
+
+    font-size: large;
+    font-style: italic;
+    background-color: blanchedalmond;
+}
+
+.head {
+
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
+
+h1,
+h4 {
+    font-style: italic;
+    text-align: center;
+    text-decoration: dotted;
+
+}
+
+.ulr:hover {
+    color: #96FF33;
+    background-color: orange;
+    text-decoration: underline;
+    font-size: large;
+    font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid black;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 1px;
+    background-color: whitesmoke;
+
+}
+
+.square {
+
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+
+.head:hover {
+    color: plum;
+}
+
+li:hover {
+
+    text-decoration: solid;
+    font-style: italic;
+
+    font-weight: 700;
+    background-color: azure;
+}
+
+li {
+    border-style: dashed;
+    padding: 1px;
+    margin: 2px;
+
+}
+
+.shead {
+    text-align: center;
+}
+
+.team {
+    align-items: center;
+    font-style: italic;
+
+}
+
+input:hover {
+    color: rgb(48, 44, 39);
+    background-color: white;
+}
+
+button {
+    background-color: aquamarine;
+}
+
+button:hover {
+    color: rgba(0, 0, 0, 0.452);
+    background-color: rgb(0, 128, 96);
+}
+
+.label {
+    padding-left: 0px;
+    padding-right: 12px;
+}
+
+.label input {
+    padding-left: 20px;
+    text-align: center;
+}
+
+.muulti {
+    height: 500px;
+    width: 200px;
+    border-color: black;
+    text-align: left;
+    font-style: italic;
+
+}
+
+.cont-corse {
+    border-style: dashed;
+    border-color: blue;
+    background-color: bisque;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 2px;
+
+}
+
+.label-link-all label {
+    border: solid black;
+    text-align: left;
+    text-decoration: black;
+    font-size: 500;
+
+}
+
+.label-link-all input {
+    border: black;
+    font-size: medium;
+    text-align: center;
+    width: 200px;
+    height: auto;
+}
+
+.ds-01 {
+
+    height: 200px;
+    width: auto;
+    width: 645px;
+    border-radius: 30px;
+    background-color: #ffffcc;
+    border: 3px solid black;
+    display: inline-block;
+    box-shadow: 5px 5px 0 6px aquamarine;
+
+}
+
+
+
+.ds-02 {
+    margin-left: 10px;
+    align-self: center;
+    margin-top: 20px;
+    height: auto;
+    width: 100%;
+    border-radius: 30px;
+    background-color: #ffffcc;
+    text-align: left;
+    font-style: italic black;
+    box-shadow: 2px 2px 0 6px aquamarine;
+}
+
+.name-01:hover {
+    background: transparent;
+    color: azure;
+}
+
+.main {
+    align-self: center;
+    height: 150px;
+    width: 1300px;
+
+    border-radius: 30px;
+    background-color: #ffffcc;
+    border: 3px solid black;
+    display: inline-block;
+    box-shadow: 5px 5px 0 6px aquamarine;
+}
+
+.cascade {
+
+    height: 150px;
+    width: 1300px;
+}
+
+#all-link-raw :hover {
+    color: blue;
+    background-color: orange;
+}
+
+label {
+    padding-right: 10px;
+    font-weight: 800;
+}
+
+td .square:hover {
+    color: bisque;
+}
+
+.square td :hover {
+
+    background-color: aquamarine;
+}
+
+.jombotrone {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 50px;
+    border-style: dotted;
+    border-color: rgb(235, 227, 227);
+}
+
+.flask-s {
+    position: absolute;
+    top: 100px;
+    margin-top: 5px;
+    border-style: outset;
+    border-color: rgb(212, 200, 200);
+    transition: 0.5s;
+}
+
+.flask-s1 {
+    position: absolute;
+    top: 100px;
+    right: 450px;
+    margin-top: 5px;
+    border-style: outset;
+    border-color: rgb(212, 200, 200);
+    transition: 0.5s;
+}
+
+.flask-s2 {
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    margin-top: 5px;
+    border-style: outset;
+    border-color: rgb(212, 200, 200);
+    transition: 0.5s;
+}

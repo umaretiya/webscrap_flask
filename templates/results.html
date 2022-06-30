@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Result_Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style_01.css') }}">
+{% endblock %}
+{% block body %}
+
+<body>
+    <h2 style="text-align: center;"><b> All results of Scrapped</b></h2>
+
+    <h3 style="text-align: center;"><b> Course_data</b></h3>
+    <table class="table-light">
+
+        <tr>
+            <th class="square">Sr No</th>
+            <th class="square">Course_Name</th>
+            <th class="square">Course_Link</th>
+            <th class="square">Course_Keywords</th>
+            <th class="square"> Pricing_IN</th>
+            <th class="square"> Pricing_US</th>
+            <th class="square"> Language</th>
+            <th class="square"> Course_Mode</th>
+
+        </tr>
+
+        {% for courses in courses_data %}
+
+        <tr>
+            <td class="square">{{loop.index}}</td>
+
+            <td class="square">{{courses['Course-Name']}}</td>
+
+            <td class="square"><a href={{courses['course_link']}}> {{courses['Course-Link']}}</a></td>
+
+            <td class="square">{{courses['KeyWords']}}</td>
+
+            <td class="square">{{courses['Price-INR']}}</td>
+
+            <td class="square">{{courses['Price-USD']}}</td>
+
+            <td class="square">{{courses['Course-Language']}}</td>
+
+            <td class="square">{{courses['Course_Mode']}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+</body>
+
+
+{% endblock %}

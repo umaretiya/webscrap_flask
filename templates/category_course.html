@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>course_catgory</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style_01.css') }}">
+
+{% endblock %}
+{% block body %}
+
+<h3 style="text-align: center;"><b> Course_category</b> </h3>
+
+<table class="table">
+    <tr class="list">
+        <th>Main Category-Name </th>
+        <th>Sub Category-Name </th>
+    </tr>
+    {% for a in categories %}
+    <tr>
+
+        <td>{{ a['mainCategory']}}</td>
+        <td style="border: black;">
+            <ul>
+                {% for list in a['SubCategory'] %}
+                <li style="border: none;">{{ list }}</li>
+                {% endfor %}
+            </ul>
+        </td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Home_Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style_01.css') }}">
+<style>
+    .cascade-1 {
+        width: 550px;
+        height: min-content;
+        text-align: left;
+        display: inline-block;
+        border-radius: 10%;
+        border: black;
+        box-shadow: 2px 2px 0 3px aquamarine;
+        margin-bottom: 30px;
+
+    }
+
+    .cascade-2 {
+        margin-left: 30px;
+        width: 550px;
+        height: min-content;
+        text-align: left;
+        display: inline-block;
+        border-radius: 10%;
+        border: black;
+        box-shadow: 2px 2px 0 3px aquamarine;
+        margin-bottom: 30px;
+        align-self: baseline;
+    }
+
+    #paragraph {
+        align-self: initial;
+        direction: ltr;
+        vertical-align: text-top;
+        display: inline-block;
+
+    }
+
+    .line-in {
+        border: 2px rgb(38, 61, 53);
+        border-top: 1px black;
+    }
+
+    .container {
+        border-radius: 10%;
+    }
+
+
+    .ds-02 {
+        text-align: left;
+        width: 100%;
+        height: fit-content;
+        border: black;
+        box-shadow: 2px 2px 0 3px aquamarine;
+    }
+</style>
+
+<h2 style="text-align: center;"> Course Name : {{ course_name }}</h2>
+
+{% endblock %}
+{% block body %}
+
+<body>
+    <h2 style="text-align: center;">full detail of courses </h2>
+
+    <div class="main" style="border: solid rgb(61, 192, 185); ">
+        <ul>
+            <li style="border: none;"><b>Is JobGuaranteeProgram :</b>{{courselink['JobGuaranteeProgram']}}</li>
+        </ul>
+        <p></p>
+        <ul>
+            <li style="border: none;"><b>Course Description</b>{{courselink['Description']}}</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="cascade-1">
+            <h3 style="text-align: left;"><b> Course Features</b></h3>
+            <ul style="align-self: left;">
+                {% for feture in courselink['course_feature'] %}
+                <li style="border: none; text-align: left;"> {{ feture }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="cascade-2">
+            <h3 style="text-align: left;"><b style="text-align: justify;"> Course Requirements</b></h3>
+            <ul>
+                {% for cor in courselink['Requirements'] %}
+                <li style="border: none; text-align: left;">{{ cor }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <!--  </div>
+    <div class="ds-01" style="border: solid black;">-->
+
+    </div>
+    <div class="ds-02">
+        <ul style="border-top: solid black;">
+            {% for curr in courselink['Curriculum'] %}
+            <th class="square"><b>{{ curr['heading'] }}</b></th>
+            <li class="line-in">
+                {% for name in curr['description'] %}
+                <p id="paragraph">{{ name }} // </p>
+                {% endfor %}
+            </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+</body>
+
+
+</html>
+{% endblock %}
+
+<!--
+        <div class="ds-02">
+        <table>
+            <tr>
+                {% for curr in courselink['Curriculum'] %}
+                <th class="square"><b>{{ curr['heading'] }}</b></th>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for curr in courselink['Curriculum'] %}
+                <td class="square">
+                    {% for name in curr['description'] %}
+
+                    <p id="paragraph" style="border: none; text-align: left;">{{ name }}</p>
+
+                    {% endfor %}
+                </td>
+                {% endfor %}
+            </tr>
+        </table>
+    </div>
+-->

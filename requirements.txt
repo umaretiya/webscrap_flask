@@ -1,0 +1,5 @@
+flask
+bs4
+requests
+logger
+flask_sqlalchemy

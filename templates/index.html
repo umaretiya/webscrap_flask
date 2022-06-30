@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>Home_Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_01.css') }}">
+
+</head>
+
+
+
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Home_Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style_01.css') }}">
+<link rel="stylesheet" href="style_01.css">
+{% endblock %}
+{% block body %}
+
+<body>
+    <h1 class="head">First Flask -- Webscrapping Project</h1>
+    <div class="container">
+        <div class="jombotrone">
+            <div class="flask-s">
+                <form action="/scrapp" method="POST">
+                    <label class="label--1" for="">go for All course details</label>
+                    <input class="label--1" type="text" name="submit" id="submit"
+                        placeholder="https://courses.ineuron.ai/">
+                    <button>submit</button>
+                </form>
+            </div>
+            <p></p>
+            <p></p>
+            <div class="flask-s1">
+                <form action="/category" method="POST">
+                    <label class="label" for="">go for cursse category</label>
+                    <input class="label" type="text" name="catGory" id="submit" placeholder=" main and sub category">
+                    <button>submit</button>
+                </form>
+            </div>
+            <p></p>
+            <div class="flask-s2">
+                <form action="/bifurcat" method="POST">
+                    <label class="label--1" for="">All course details</label>
+                    <input class="label--1" type="text" name="bifurcat" id="submit" placeholder="category of course">
+                    <button>submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <p></p>
+
+    <p></p>
+    <!--  <form action="/courseLink" ,method="POST">
+        <label class="label--1" for="">copy link and past here for individual course</label>
+        <input class="label--1" type="text" name="link" id="submit">
+        <button>submit</button>
+    </form>-->
+    <aside id="log">
+        <div data-id="ch3" hidden>
+            <h1><b> Course Details</b></h1>
+        </div>
+    </aside>
+
+    <section id="summaries">
+        <details id="ch3">
+            <summary><b style="font-weight: bold;">Couses detals</b></summary>
+            <h3 style="text-align: center;">Course Links click and get details</h3>
+            <table class="table-light">
+                <tr>
+                    <th class="square">Sr NO</th>
+                    <th class="square">Select</th>
+                    <th class="square">submit</th>
+                    <th class="square">Course Link</th>
+
+                </tr>
+                {% for link in courses %}
+                <tr>
+
+                    <form action="/courseLink" method="POST">
+                        <td class="square">{{ loop.index }}</td>
+                        <td class="square">
+                            <input type="checkbox" uncheck name="link" id="link" value={{ link['Course-Link']}}>
+                        </td>
+                        <td class="square">
+                            <button name="link" id="link">submit</button>
+                        </td>
+                        <td class="square" id="all-link-raw">
+                            <label class="label-link-all" for="link"><a href={{ link['Course-Link']}}>{{
+                                    link['Course-Link']}}</a>
+                            </label>
+                        </td>
+                    </form>
+                </tr>
+                {% endfor %}
+            </table>
+        </details>
+
+    </section>
+
+    <script>
+        function logItem(e) {
+            const item = document.querySelector(`[data-id=${e.target.id}]`);
+            item.toggleAttribute('hidden')
+        }
+
+        const chapters = document.querySelectorAll('table');
+        chapters.forEach((course) => {
+            course.addEventListener('toggle', logItem);
+        });
+    </script>
+
+
+
+</body>
+
+
+{% endblock %}

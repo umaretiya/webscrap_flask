@@ -1,0 +1,82 @@
+{% block head %}
+
+
+<title>Home_Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style_01.css') }}">
+<style>
+    body {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    
+    #log {
+        flex-shrink: 0;
+        padding-left: 3em;
+    }
+    
+    #summaries {
+        flex-grow: 1;
+    }
+</style>
+
+{% endblock %} {% block body %}
+
+<body>
+
+
+    <aside id="log">
+        <b>Course Category:</b>
+        <div data-id="ch1" hidden><a href="#">I-English</a> </div>
+        <div data-id="ch2" hidden>Main Category</div>
+        <div data-id="ch3" hidden>Sub Category</div>
+    </aside>
+    <section id="summaries">
+        <b>Category Type:</b>
+        <!--     <details id="ch1">
+            <summary>Chapter I</summary>
+            Philocoophy reproves Boethius for the foolishnes of his cmllaints againts fortunr. Her very nature is
+            caprice.
+        </details>-->
+        <details id="ch2">
+            <summary>Category Main</summary>
+            {% for cat in category %}
+            <ul>
+                <li style=" border-width: 1px; border-style: dotted;"><b>{{ cat['mainCategory'] }}</b></li>
+            </ul>
+            {% endfor %}
+        </details>
+        <details id="ch3">
+            <summary>Category Sub</summary>
+            {% for cat in category %}
+            <h3>{{ cat['mainCategory'] }}</h3>
+            <ul>
+                {% for mat in cat['SubCategory'] %}
+                <li style=" border-width: 1px; border-style: dotted;">{{ mat }}</li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+        </details>
+    </section>
+
+
+
+
+
+    <script>
+        function logItem(e) {
+            const item = document.querySelector(`[data-id=${e.target.id}]`);
+            item.toggleAttribute('hidden')
+        }
+
+        const chapters = document.querySelectorAll('details');
+        chapters.forEach((category) => {
+            category.addEventListener('toggle', logItem)
+        });
+    </script>
+
+
+
+</body>
+{% endblock %}
+
+</html>
