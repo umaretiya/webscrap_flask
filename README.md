@@ -17,12 +17,26 @@ git init
 docker build -t <image name>:<tag>
 docker image build -t <flask_docker> .
 
-docker run -p 5000:5000 -d <flask_docker>
-
+docker run -p 5000:5000 -d <webscrap>
+remot docker repo 9909868/flaskwebscrap
 docker ps
 
 docker stop <container id>
 ```
+pushing image 
+```
+docker tag flask_docker <your-docker-hub-username>/flask-docker
+docker push <your-docker-hub-username>/flask-docker
+```
+heroku app flask-fsweb name
+command :
+heroku login
+heroku container:login
+docker login --username=<your-username> --password=<your-password>
+heroku create <app-name>
+
+heroku container:push web --app <app-name>
+heroku container:release web --app <app-name>
 
 
 
